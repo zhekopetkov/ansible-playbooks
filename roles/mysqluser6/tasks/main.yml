@@ -1,0 +1,19 @@
+---
+- name: Create a new database
+  mysql_db:
+    name: '{{ MYSQL_DB_NAME }}'
+    state: present
+
+- name: Create database user with database privileges on specific database
+  mysql_user:
+    name: '{{ MYSQL_USER }}'
+    password: '{{ MYSQL_PASS }}'
+    priv: '{{ MYSQL_DB_NAME }}.*:ALL'
+    state: present
+
+- name: Set user privileges
+  mysql_user:
+    user: user007
+    state: present
+    append_privs: yes
+    priv: '{{ MYSQL_DB_NAME }}.*:ALL'

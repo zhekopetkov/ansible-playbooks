@@ -1,0 +1,4 @@
+---
+MYSQL_DB_NAME: DB
+MYSQL_USER: user
+MYSQL_PASS: pass
