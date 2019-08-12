@@ -1,0 +1,9 @@
+---
+- hosts: group01
+  gather_facts: no
+  tasks:
+  - name: Fetch stuff from the remote and save it locally
+    synchronize:  src={{ item }} dest=/local_path/group01/{{ inventory_hostname }}{{ item }} mode=pull
+    with_items:
+      - "/etc/nginx/"
+      - "/app01/"
