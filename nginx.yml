@@ -1,0 +1,23 @@
+---
+ - hosts: web
+   sudo: yes
+   user: root
+   roles:
+    - nginx
+
+
+#That has to be in taks/main.yml file
+#
+#vars_files:
+#- vars/api_key.yml
+#
+#- name: Copy configuration file to server using a template.
+#template:
+#src: example.xml.j2
+#dest: /etc/myapp/example.xml
+#mode: 0644
+#The copy module copies files from within the module’s files folder, and the
+#template module runs given template files through the Jinja2 templating engine,
+#merging in any variables available during your playbook run before copying the file
+#to the server.
+#

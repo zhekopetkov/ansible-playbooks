@@ -11,7 +11,7 @@
     priv: '{{ MYSQL_DB_NAME }}.*:ALL'
     state: present
 
-- name: Set user privileges
+- name: Set privileges for another user
   mysql_user:
     user: user007
     state: present
